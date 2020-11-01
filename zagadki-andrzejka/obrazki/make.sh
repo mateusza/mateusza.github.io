@@ -11,9 +11,9 @@ done
     printf "var Obrazki = [\n"
     first=""
     for a in *.png; do
-       [ "x$first" = "xno" ] && printf ", "
-       printf '"%s"' "$a"
+       [ "x$first" = "xno" ] && printf ",\n"
+       printf '    "%s"' "$a"
        first=no
     done 
-    printf "]\n"
+    printf "\n];\n"
 } > Obrazki.js
