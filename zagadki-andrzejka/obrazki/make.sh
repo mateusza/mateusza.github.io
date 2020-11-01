@@ -1,5 +1,11 @@
 #!/bin/bash
 
+for a in *.webp; do
+    printf -v n "%s.png" "$( basename "$a" .webp )"
+    echo "$a --> $n"
+    convert "$a" "$n"
+done
+
 { 
     printf "var Obrazki = [\n"
     first=""
