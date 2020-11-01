@@ -1,6 +1,7 @@
 #!/bin/bash
 
 for a in *.webp; do
+    [[ -e "$a" ]] || break
     printf -v n "%s.png" "$( basename "$a" .webp )"
     echo "$a --> $n"
     convert "$a" "$n"
