@@ -6,6 +6,7 @@
         <link rel=stylesheet href="style.css">
         <script src="zagadki.js"></script>
         <script src="Random.js"></script>
+        <script src="obrazki/Obrazki.js"></script>
     </head>
     <body>
         <div class="page">
@@ -16,20 +17,11 @@
         </div>
 
         <script>
-            let obrazki = [
-                "arbuz.png", "banan.png", "biedronka.png",
-                "dom.png", "gruszka.png", "jablko.png",
-                "kot.png", "krowa.png", "motyl.png",
-                "mysz.png", "oko.png", "pies.png",
-                "pomarancza.png", "rekawiczki.png",
-                "roza.png", "trawa.png", "truskawka.png"
-            ]
-
             let ile = 7
 
-            let litery = Random.order( [ ... new Set( obrazki.map( n => n[0] ) ) ] ).slice( 0, ile )
+            let litery = Random.order( [ ... new Set( Obrazki.map( n => n[0] ) ) ] ).slice( 0, ile )
 
-            let obr = litery.map( l => Random.elem( obrazki.filter( o => o[0] == l ) ) )
+            let obr = litery.map( l => Random.elem( Obrazki.filter( o => o[0] == l ) ) )
             
             let L = Random.order( litery )
             let R = Random.order( obr )
