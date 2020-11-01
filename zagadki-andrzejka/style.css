@@ -40,6 +40,10 @@ div.elem span {
     text-align: center;
 }
 
+div.elem img {
+    width: 20mm;
+}
+
 div.col:nth-child(1) {
     text-align: left;
 }

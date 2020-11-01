@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Zagadki</title>
+        <link rel=stylesheet href="style.css">
+        <script src="zagadki.js"></script>
+        <script src="Random.js"></script>
+    </head>
+    <body>
+        <div class="page">
+            <div class="col">
+            </div>
+            <div class="col">
+            </div>
+        </div>
+
+        <script>
+            let obrazki = [
+                "arbuz.png", "banan.png", "biedronka.png",
+                "dom.png", "gruszka.png", "jablko.png",
+                "kot.png", "krowa.png", "motyl.png",
+                "mysz.png", "oko.png", "pies.png",
+                "pomarancza.png", "rekawiczki.png",
+                "roza.png", "trawa.png", "truskawka.png"
+            ]
+
+            let ile = 7
+
+            let litery = Random.order( [ ... new Set( obrazki.map( n => n[0] ) ) ] ).slice( 0, ile )
+
+            let obr = litery.map( l => Random.elem( obrazki.filter( o => o[0] == l ) ) )
+            
+            let L = Random.order( litery )
+            let R = Random.order( obr )
+
+            L.forEach(element => {
+                let col = document.querySelector( "div.col:nth-child(1)" )
+                let e = (() => {
+                    let ee = document.createElement("div")
+                    ee.classList.add("elem")
+                    let cnt = document.createElement("span")
+                    cnt.innerText = element.toUpperCase()
+                    ee.appendChild( cnt )
+                    return ee
+                })()
+                col.appendChild( e )
+            });
+
+            R.forEach(element => {
+                let col = document.querySelector( "div.col:nth-child(2)" )
+                let e = document.createElement("div")
+                e.classList.add("elem")
+                let img = document.createElement("img")
+                img.setAttribute( "src", "obrazki/" + element )
+                e.appendChild( img )
+                col.appendChild( e )
+            });
+        </script>
+
+    </body>
+</html>
