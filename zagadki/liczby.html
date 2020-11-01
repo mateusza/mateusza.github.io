@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Zagadki</title>
+        <link rel=stylesheet href="style.css">
+        <script src="zagadki.js"></script>
+        <script src="Random.js"></script>
+    </head>
+    <body>
+        <div class="page">
+            <div class="col">
+            </div>
+            <div class="col">
+            </div>
+        </div>
+
+        <script>
+            let obrazki = "★☆■□○●▲△".split("")  
+            let cyfry = "123456789".split("")
+
+            let ile = 5
+
+            let o = Random.order( obrazki ).slice( 0, ile )
+            let c = Random.order( cyfry ).slice( 0, ile )
+
+            let pary = [ ... ( new Array(ile) ).fill().keys() ]
+                .map( i => [
+                    ( new Array( 1 * c[i] ) ).fill().map( e => o[i] ).join(" "),
+                    c[i]
+                ] )
+            
+            let L = Random.order( pary.map( e => e[0] ) )
+            let R = Random.order( pary.map( e => e[1] ) )
+
+            L.forEach(element => {
+                let col = document.querySelector( "div.col:nth-child(1)" )
+                let e = (() => {
+                    let ee = document.createElement("div")
+                    ee.classList.add("elem")
+                    let cnt = document.createElement("span")
+                    cnt.innerText = element
+                    ee.appendChild( cnt )
+                    return ee
+                })()
+                col.appendChild( e )
+            });
+
+            R.forEach(element => {
+                let col = document.querySelector( "div.col:nth-child(2)" )
+                let e = document.createElement("div")
+                e.classList.add("elem")
+                e.innerText = element
+                col.appendChild( e )
+            });
+        </script>
+
+    </body>
+</html>

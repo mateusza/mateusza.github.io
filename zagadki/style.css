@@ -1,0 +1,49 @@
+@page {
+    size:  A4;
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: sans-serif;
+}
+div.page {
+    width: 210mm;
+    height: 297mm;
+    margin: auto;
+    xoutline: 1px solid red;
+    display: flex;
+    justify-content: space-between;
+}
+
+div.col {
+    xoutline: 1px solid green;
+    width: 24%;
+    margin: 0 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+div.elem {
+    font-size: 12mm;
+    xoutline: 1px solid purple;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 15%;
+}
+div.elem span {
+    text-align: center;
+}
+
+div.col:nth-child(1) {
+    text-align: left;
+}
+
+div.col:nth-child(2) {
+    text-align: right;
+}
