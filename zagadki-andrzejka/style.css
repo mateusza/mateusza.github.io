@@ -29,7 +29,7 @@ div.col {
 }
 
 div.elem {
-    font-size: 10mm;
+    font-size: 14mm;
     xoutline: 1px solid purple;
     display: flex;
     justify-content: center;
@@ -37,11 +37,13 @@ div.elem {
     height: 10%;
 }
 div.elem span {
+    font-weight: bold;
     text-align: center;
 }
 
 div.elem img {
-    width: 20mm;
+    max-width: 25mm;
+    max-height: 25mm;
 }
 
 div.col:nth-child(1) {
