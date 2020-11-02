@@ -15,6 +15,7 @@ var Obrazki = [
     "dynia.png",
     "dzwonek.png",
     "frytki.png",
+    "garnek.png",
     "gruszka.png",
     "gwiazdka.png",
     "hamburger.png",
