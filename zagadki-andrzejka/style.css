@@ -29,13 +29,18 @@ div.col {
 }
 
 div.elem {
-    font-size: 14mm;
+    font-size: 10mm;
     xoutline: 1px solid purple;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 10%;
 }
+
+body.obrazki div.elem {
+	font-size: 16mm;
+}
+
 div.elem span {
     font-weight: bold;
     text-align: center;
