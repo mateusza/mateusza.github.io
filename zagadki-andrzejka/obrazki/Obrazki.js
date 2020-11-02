@@ -39,6 +39,7 @@ var Obrazki = [
     "krowa.png",
     "krzesło.png",
     "książka.png",
+    "księżyc.png",
     "kubek.png",
     "lampa.png",
     "liść.png",
@@ -78,6 +79,7 @@ var Obrazki = [
     "ryba.png",
     "samochód.png",
     "samolot.png",
+    "sanki.png",
     "schody.png",
     "serce.png",
     "skarpetki.png",
@@ -85,6 +87,7 @@ var Obrazki = [
     "słońce.png",
     "śrubokręt.png",
     "suszarka.png",
+    "świeczka.png",
     "trawa.png",
     "truskawka.png",
     "ucho.png",
@@ -101,5 +104,6 @@ var Obrazki = [
     "żaba.png",
     "żarówka.png",
     "zegar.png",
-    "żółw.png"
+    "żółw.png",
+    "żyrafa.png"
 ];
