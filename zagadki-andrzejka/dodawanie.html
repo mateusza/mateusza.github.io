@@ -15,16 +15,16 @@
         </div>
 
         <script>
-            const liczby = [... (new Array(10)).keys()]
+            const EmptyArray = n => [... (new Array(n)).keys()]
             const ile = 7
-            const a = Random.order(liczby).slice(0, ile)
-            const b = Random.order(liczby).slice(0, ile)
+            const a = EmptyArray(ile).map(x => Random.int(0,5))
+            const b = EmptyArray(ile).map(x => Random.int(0,5))
 
-            const pary = [... (new Array(ile)).keys()]
+            const pary = EmptyArray(ile)
                 .map(i => [[a[i], b[i]], a[i]+b[i]])
             
-            let L = Random.order( pary.map( e => e[0] ) )
-            let R = Random.order( pary.map( e => e[1] ) )
+            let L = Random.order(pary.map(e => e[0]))
+            let R = Random.order(pary.map(e => e[1]))
 
             L.forEach(element => {
                 let col = document.querySelector( "div.col:nth-child(1)" )
