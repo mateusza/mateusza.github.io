@@ -4,5 +4,7 @@
 
 ## [Dodawania](dodawanie.html)
 
-## [Obrazki](obrazki.html)
+## [Obrazki - litery](obrazki.html)
+
+## [Obrazki - pary](obrazki-pary.html)
 

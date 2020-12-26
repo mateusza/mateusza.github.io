@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Zagadki</title>
+        <link rel=stylesheet href="style.css">
+        <script src="zagadki.js"></script>
+        <script src="Random.js"></script>
+        <script src="obrazki/Obrazki.js"></script>
+    </head>
+    <body class="obrazki">
+        <div class="page">
+            <div class="col">
+            </div>
+            <div class="col">
+            </div>
+        </div>
+
+        <script>
+            const ile = 7
+
+            const pierwsze_litery = Obrazki.map(n => n[0]);
+            const uzyte_litery = [... new Set(pierwsze_litery)];
+            const dobre_litery = uzyte_litery
+                .map(l => ({litera: l, ile: pierwsze_litery.filter(x => x == l).length}))
+                .filter(x => x.ile>1)
+                .map(x => x.litera);
+            const obrazki_wg_liter = dobre_litery.map(x => Obrazki.filter(o => o[0] == x));
+            const wybrane = Random.order(obrazki_wg_liter)
+                .slice(0, ile)
+                .map(zbior => Random.order(zbior).slice(0, 2));
+
+            const L = Random.order(wybrane.map(e => e[0]));
+            const R = Random.order(wybrane.map(e => e[1]));
+
+            L.forEach(element => {
+                const col = document.querySelector("div.col:nth-child(1)");
+                const e = document.createElement("div");
+                e.classList.add("elem");
+                const img = document.createElement("img");
+                img.setAttribute("src", "obrazki/" + element);
+                e.append(img);
+                col.append(e);
+            });
+
+            R.forEach(element => {
+                const col = document.querySelector("div.col:nth-child(2)");
+                const e = document.createElement("div");
+                e.classList.add("elem");
+                const img = document.createElement("img");
+                img.setAttribute("src", "obrazki/" + element);
+                e.append(img);
+                col.append(e);
+            });
+        </script>
+
+    </body>
+</html>
