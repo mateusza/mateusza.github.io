@@ -8,3 +8,4 @@
 
 ## [Obrazki - pary](obrazki-pary.html)
 
+## [Obrazki - słowa](slowa.html)
