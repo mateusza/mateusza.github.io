@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Słowa - Zagadki</title>
+        <link rel=stylesheet href="style.css">
+        <script src="zagadki.js"></script>
+        <script src="Random.js"></script>
+        <script src="obrazki/Obrazki.js"></script>
+    </head>
+    <body class="obrazki">
+        <div class="page">
+            <div class="col">
+            </div>
+            <div class="col">
+            </div>
+        </div>
+
+        <script>
+            const ile = 4
+
+            const litery = [... new Set(Obrazki.map(x => x[0]))];
+
+            const litera = Random.elem(litery.filter(a => Obrazki.filter(o => o[0] == a).length >= ile))
+
+            const statystyki = litery
+                .filter(a => Obrazki.filter(o => o[0] == a).length < ile)
+                .map(a => a+": "+(ile - Obrazki.filter(o => o[0] == a).length))
+            console.log(statystyki)
+
+            let obr = Random.elem(Obrazki.filter(o => o[0] == litera), ile)
+            
+            let L = Random.order(obr)
+            let R = Random.order(obr.map(o=>o.split(".")[0]))
+
+            L.forEach(element => {
+                
+                document
+                    .querySelector("div.col:nth-child(2)")
+                    .append((()=>{
+                        let e = document.createElement("div");
+                        e.classList.add("elem");
+                        let img = document.createElement("img");
+                        img.setAttribute("src", "obrazki/" + element);
+                        e.append(img);
+                        return e;
+                    })())
+            });
+
+            R.forEach(element => {
+                document
+                    .querySelector("div.col:nth-child(1)")
+                    .append((() => {
+                        let ee = document.createElement("div");
+                        ee.classList.add("elem");
+                        let cnt = document.createElement("span");
+                        cnt.innerText = element.toUpperCase();
+                        ee.append(cnt);
+                        return ee;
+                    })())
+            });
+        </script>
+
+    </body>
+</html>
